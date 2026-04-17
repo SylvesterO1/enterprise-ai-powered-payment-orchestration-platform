@@ -59,6 +59,20 @@ DLT Consumer
   -> marks payment as FAILED
 ```
 
+## Screenshots
+
+<p align="center">
+  <a href="./target.png">
+    <img src="./target.png" alt="Target architecture or flow view" width="32%" />
+  </a>
+  <a href="./grafana-dashboard.png">
+    <img src="./grafana-dashboard.png" alt="Grafana dashboard" width="32%" />
+  </a>
+  <a href="./prometheus.png">
+    <img src="./prometheus.png" alt="Prometheus metrics view" width="32%" />
+  </a>
+</p>
+
 ## Stack
 
 - Java 21
