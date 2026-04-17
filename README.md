@@ -1,19 +1,40 @@
 # Enterprise AI-Powered Payment Orchestration Platform
 
-Enterprise-grade payment orchestration platform built with Java 21, Spring Boot, PostgreSQL, Kafka, Flyway, JWT/OAuth2, OpenTelemetry, Prometheus, and Grafana.
+Production-style payment orchestration platform built with Java 21 and Spring Boot to demonstrate how modern payment systems handle secure API intake, idempotent transaction creation, AI-assisted fraud and compliance decisions, reliable event publication, and observable asynchronous workflows.
 
-## Core capabilities
+This project models the kind of backend architecture used in regulated transaction systems: payments are accepted through a secured REST API, persisted with idempotency guarantees, published through the outbox pattern, processed asynchronously through Kafka-driven orchestration, and tracked with metrics and tracing.
 
-- Payment intake API
-- JWT/OAuth2 secured endpoints
-- Read/write scope separation
-- Idempotent payment creation
-- Fraud and compliance orchestration
-- Outbox pattern for reliable event publishing
-- Kafka-driven asynchronous processing
-- DLT-based failure handling
-- Flyway-managed schema evolution
-- Testcontainers integration testing
+## Why this project stands out
+
+- AI-assisted orchestration flow for fraud and compliance decisioning
+- Idempotent payment creation to prevent duplicate transaction processing
+- Outbox pattern for reliable event publishing between database and Kafka
+- Event-driven architecture with DLT-based failure handling
+- JWT/OAuth2-ready API security with a local developer mode
+- Flyway-managed schema migrations for repeatable database evolution
+- OpenTelemetry tracing and Prometheus metrics for operational visibility
+- Integration test coverage with Testcontainers for realistic system validation
+
+## Technical highlights
+
+- REST API for payment intake and retrieval
+- Spring Security configuration for JWT resource server flows
+- PostgreSQL persistence for payments and outbox events
+- Kafka producers and consumers for payment lifecycle events
+- AI decision records and anomaly detection test coverage
+- Fraud scoring, compliance screening, and orchestration decision services
+- OpenAPI support for API discoverability
+- Prometheus and tracing instrumentation for production-style observability
+
+## Architecture flow
+
+1. A client submits a payment request through the API.
+2. The service validates the request and enforces idempotency.
+3. The payment and corresponding outbox event are stored transactionally in PostgreSQL.
+4. The outbox publisher sends the event to Kafka.
+5. Downstream orchestration evaluates validation, fraud, and compliance outcomes.
+6. The payment is approved, rejected, or failed, and lifecycle events are emitted.
+7. Dead-letter handling captures failed consumer scenarios for recovery and visibility.
 
 ## High-level architecture
 
@@ -37,6 +58,19 @@ DLT Consumer
   -> handles failed consumer events
   -> marks payment as FAILED
 ```
+
+## Stack
+
+- Java 21
+- Spring Boot 3
+- Spring Security OAuth2 Resource Server
+- PostgreSQL
+- Apache Kafka
+- Flyway
+- OpenTelemetry
+- Prometheus and Grafana
+- Testcontainers
+- Maven
 
 ## Running the service
 
