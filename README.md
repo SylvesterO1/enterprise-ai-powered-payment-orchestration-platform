@@ -62,14 +62,17 @@ DLT Consumer
 ## Screenshots
 
 <p align="center">
+  <a href="./home.png">
+    <img src="./home.png" alt="Home view" width="24%" />
+  </a>
   <a href="./target.png">
-    <img src="./target.png" alt="Target architecture or flow view" width="32%" />
+    <img src="./target.png" alt="Target architecture or flow view" width="24%" />
   </a>
   <a href="./grafana-dashboard.png">
-    <img src="./grafana-dashboard.png" alt="Grafana dashboard" width="32%" />
+    <img src="./grafana-dashboard.png" alt="Grafana dashboard" width="24%" />
   </a>
   <a href="./prometheus.png">
-    <img src="./prometheus.png" alt="Prometheus metrics view" width="32%" />
+    <img src="./prometheus.png" alt="Prometheus metrics view" width="24%" />
   </a>
 </p>
 
